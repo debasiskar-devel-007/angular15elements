@@ -1,7 +1,12 @@
-<p>lazyimage works!</p>
+<!-- <p>lazyimage works!</p> -->
 
 <!-- <img loading="lazy" [attr.src-data]="imagdata.src" alt=""> -->
 
-<img loading="lazy" [attr.src]="imagdata?.loaderPath" [attr.data-orgsrc]="imagdata?.src" [alt]="imagdata?.alt"
-    class="{{ imagdata?.class }}" id="{{ imagdata?.id }}" />
+<ng-container *ngIf="resetdata">
+    <img loading="lazy" [attr.src]="imagdata?.loaderPath" [attr.data-orgsrc]="imagdata?.src" [alt]="imagdata?.alt"
+        class="{{ imagdata?.class }}" id="{{ imagdata?.id }}" />
+</ng-container>
+
+<button type="button" (click)="emitevent()"> Click Here</button>
+
 <!-- {{imagdata.src}}//{{imagdata|json}} -->

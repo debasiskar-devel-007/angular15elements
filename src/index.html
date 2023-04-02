@@ -7,6 +7,19 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script>
+
+    function changeimg() {
+      let imgattr = { "loaderPath": "https://miro.medium.com/v2/resize:fit:1400/1*CsJ05WEGfunYMLGfsT2sXA.gif", "src": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*p8izLuN2meY_0fO6yS0D9w.jpeg" };
+      document.getElementById('index1').setAttribute('data', JSON.stringify(imgattr))
+
+
+
+
+    }
+  </script>
+
 </head>
 
 <body>
@@ -16,11 +29,18 @@
   </h2>
 
 
-  <div class="image_wrapper">
-    <lazy-image style="max-width: 300px; max-height: 300px;"
+  <button onclick="changeimg()" type="button"> Chnage Image</button>
+  <br />
+  <br />
+  <br />
+
+  <div class="image_wrapper" style="max-width:300px;max-height:300px;">
+    <lazy-image id="index1"
       data='{"loaderPath":"https://miro.medium.com/v2/resize:fit:1400/1*CsJ05WEGfunYMLGfsT2sXA.gif","src":"https://uploaded-files-react.s3.amazonaws.com/galvestone-physical-medicine-files/_1664458056_doctor-character-background_1270-84.jpg"}'>
     </lazy-image>
   </div>
+
+
 
 
   <div class="image_wrapper">
@@ -31,7 +51,7 @@
 
 
   <div class="image_wrapper">
-    <lazy-image style="max-width: 300px; max-height: 300px;"
+    <lazy-image id="index2" style="max-width: 300px; max-height: 300px;"
       data='{"loaderPath":"https://miro.medium.com/v2/resize:fit:1400/1*CsJ05WEGfunYMLGfsT2sXA.gif","src":"https://gbwa.xyz/wp-content/uploads/2022/05/heavy-file-transfer.jpg.webp"}'>
     </lazy-image>
   </div>
@@ -40,5 +60,15 @@
 
   <app-root></app-root>
 </body>
+
+<script>
+
+  // for listing event from element
+  document.querySelector('#index2').addEventListener('cool-event', (e) => {
+    console.log('image button', 'clicked', e);
+    console.log('get attr', e.target.getAttribute("data"));
+  })
+
+</script>
 
 </html>
