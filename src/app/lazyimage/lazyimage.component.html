@@ -1,0 +1,7 @@
+<p>lazyimage works!</p>
+
+<!-- <img loading="lazy" [attr.src-data]="imagdata.src" alt=""> -->
+
+<img loading="lazy" [attr.src]="imagdata?.loaderPath" [attr.data-orgsrc]="imagdata?.src" [alt]="imagdata?.alt"
+    class="{{ imagdata?.class }}" id="{{ imagdata?.id }}" />
+<!-- {{imagdata.src}}//{{imagdata|json}} -->
